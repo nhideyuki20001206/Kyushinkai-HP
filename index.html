@@ -65,6 +65,15 @@
     .member-item h4{margin:1rem 0 .5rem;}
     .member-item span{display:block;color:#d8aa46;font-weight:600;text-transform:uppercase;}
 
+    /* 入会希望者ページの写真 */
+    .nyukai-photo img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
     /* タブ */
     ul.tabs{display:flex;justify-content:center;gap:1rem;list-style:none;padding:0;margin:2rem 0;}
     ul.tabs li{flex:1;}
@@ -204,10 +213,8 @@
               当会には、一般部 40 名、少年部 50 名（年長から）が在籍し、 各道場にて日々稽古に励んでおります。(2026年2月現在)<br>
               入会をご希望の方は、どうぞ直接稽古場へお越しください。実際の稽古をご覧いただき、雰囲気を感じていただければと思います。<br><br>
               稽古時間中の来所・帰宅は自由です。学校行事や施設都合により稽古が中止となる場合がございます。
-              その際は大変申し訳ございませんが、別日に改めてお越しください。<br>
-
-
-<br>
+              その際は大変申し訳ございませんが、別日に改めてお越しください。<br>  
+          <br>
               </p>
               <hr>
               <h4>会費</h4>
@@ -226,7 +233,11 @@
                 <li><strong>手鎌地区公民館(手鎌道場) :</strong> 木曜 19時～21時</li>
                 <li><strong>三川地区公民館(三川道場) :</strong> 金曜 19時～21時</li>
               </ul>  
-              
+            
+              <div class="nyukai-photo">
+              <img src="images/集合写真.jpg" alt="集合写真">
+            </div>
+
             </div>
           </section>
 
@@ -270,11 +281,8 @@
       if (mq.matches) {
         menu.classList.add('is-open');
         btn.setAttribute('aria-expanded', 'true');
-      } else {
-        menu.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    };
+      } 
+          };
     mq.addEventListener ? mq.addEventListener('change', sync) : mq.addListener(sync);
     sync();
   }
@@ -317,10 +325,6 @@
           }
         }
 
-        if (window.innerWidth < 992) {
-          $('.menu').classList.remove('is-open');
-          $('.toggle-menu').setAttribute('aria-expanded','false');
-        }
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
