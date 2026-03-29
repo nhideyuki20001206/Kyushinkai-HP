@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>大牟田 扱心会 公式ホームページ</title>
-  <meta name="description" content="大牟田市にある空手道場の公式ホームページ。初心者歓迎、子どもから大人まで学べる道場です。見学受付中！">
+  <meta name="description" content="大牟田市にある空手道場、扱心会の公式ホームページ。初心者歓迎、子どもから大人まで学べる道場です。見学お待ちしております！">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Fonts & Icons -->
@@ -39,8 +39,8 @@
     .sidebar-wrapper{padding-right:80px;}
     @media(max-width:991px){.sidebar-wrapper{padding-right:20px;}}
     .logo-wrapper{background:rgba(0, 0, 0, 0.600);text-align:center;padding:40px;}
-    .logo-wrapper .main-logo{font-family:'Sawarabi Mincho',serif;font-size:1.5em;color:#c00;padding:5px 10px;border-radius:5px;}
-    .logo-wrapper .sub-logo{font-family:'Sawarabi Mincho',serif;font-size:1em;color:#f1e9e9;margin-top:-4px;display:block;}
+    .logo-wrapper .main-logo{font-family:'Sawarabi Mincho',serif;font-size:1.2em;color:#c00;padding:5px 10px;border-radius:5px;display: inline-block;white-space:nowrap;}
+    .logo-wrapper .sub-logo{font-family:'Sawarabi Mincho',serif;font-size:.8em;color:#f1e9e9;margin-top:-4px;display:block;white-space:nowrap;}
 
     .menu-wrapper{position:relative;}
     .toggle-menu{background:rgba(0,0,0,0.600);color:#fff;width:100%;border:0;padding:12px;cursor:pointer;}
@@ -51,6 +51,25 @@
     .menu li{border-top:1px solid #c7cdd8;}
     .menu li a{display:block;padding:18px 30px;font-size:1.125rem;font-weight:600;text-transform:uppercase;color:#fff;}
     .menu li a.active{background:#d8aa46;}
+
+/* ① 基本：改行しない（1450pxより大きい時） */
+.logo-wrapper .main-logo .logo-break {
+  display: none;
+}
+
+/* ② 1450px以下〜992px以上：改行する */
+@media (max-width: 1450px) {
+  .logo-wrapper .main-logo .logo-break {
+    display: inline;
+  }
+}
+
+/* ③ 992px未満：改行しない */
+@media (max-width: 767.5px) {
+  .logo-wrapper .main-logo .logo-break {
+    display: none;
+  }
+}
 
     /* コンテンツ共通 */
     .content{display:none;}
@@ -127,7 +146,7 @@
       <div class="col-md-4 col-sm-12 sidebar-wrapper sidebar-menu">
         <div class="logo-wrapper">
           <h1 class="logo">
-            <a href="#" id="logo-home"><span class="sub-logo">正伝空手道</span></a><span class="main-logo">大牟田 扱心会</span>
+            <a href="#" id="logo-home"><span class="sub-logo">正伝空手道</span><span class="main-logo">大牟田<br class="logo-break"> 扱心会</span></a>
           </h1>
         </div>
         <div class="menu-wrapper">
@@ -278,10 +297,8 @@
 
     const mq = window.matchMedia('(min-width: 992px)');
     const sync = () => {
-      if (mq.matches) {
         menu.classList.add('is-open');
         btn.setAttribute('aria-expanded', 'true');
-      } 
           };
     mq.addEventListener ? mq.addEventListener('change', sync) : mq.addListener(sync);
     sync();
