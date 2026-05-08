@@ -134,15 +134,19 @@
     /* 道場リストの整列（PC・タブレット） */
     .dojo li {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr max-content; 
       margin: 4px 0;
+      column-gap: 20px; 
+      margin-bottom: 12px;
+      max-width: 500px;
+            color: #000000; /* ほんの少し濃くする */
     }
 
     /* スマホでは曜日を次の行に落とす */
-    @media (max-width: 505px) {
+    @media (max-width: 515px) {
       .dojo li {
         grid-template-columns: 1fr; /* 1列にする */
-        color: #111; /* ほんの少し濃くする */
+  
       }
       .dojo li span:last-child {
         margin-top: 4px; /* 少し余白をつけて見やすく */
@@ -268,16 +272,16 @@
               </ul>
 
 <br>
-              <hr>
-              <h4>各道場</h4>
-            <ul class="dojo">
-              <li><span>三池小学校（本部道場）</span><span>土曜 19:00～21:00</span></li><br>
-              <li><span>三川地区公民館（三川道場）</span><span>金曜 19:00～21:00</span></li><br>
-              <li><span>手鎌地区公民館（手鎌道場）</span><span>木曜 19:00～21:00</span></li><br>
-              <li><span>銀水小学校（久福木道場）</span><span>木曜 19:00～21:00</span></li><br>
-              <li><span>御木中学校（歴木道場）</span><span>木曜 19:30～21:00</span></li><br>
-            </ul>
-          
+                <hr>
+                <h4>各道場</h4>
+              <ul class="dojo">
+                <li><span>三池小学校（本部道場）</span><span>土曜 19:00～21:00</span></li>
+                <li><span>三川地区公民館（三川道場）</span><span>金曜 19:00～21:00</span></li>
+                <li><span>手鎌地区公民館（手鎌道場）</span><span>木曜 19:00～21:00</span></li>
+                <li><span>銀水小学校（久福木道場）</span><span>木曜 19:00～21:00</span></li>
+                <li><span>御木中学校（歴木道場）</span><span>木曜 19:30～21:00</span></li>
+              </ul>
+            
             </div>
           </section>
 
